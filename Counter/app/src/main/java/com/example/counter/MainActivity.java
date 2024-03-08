@@ -22,6 +22,14 @@ public class MainActivity extends AppCompatActivity {
         output.setText(Integer.toString(count));
 
     }
+    public void button3_Click(View view){
+        int count;
+        TextView output = (TextView) findViewById(R.id.textView);
+        count = Integer.parseInt(output.getText().toString());
+        count--;
+        output.setText(Integer.toString(count));
+
+    }
     public  void button2_Click(View view){
         TextView output = (TextView) findViewById(R.id.textView);
         output.setText(R.string.ini_value);
