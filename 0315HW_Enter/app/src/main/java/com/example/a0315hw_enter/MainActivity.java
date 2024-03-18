@@ -43,10 +43,10 @@ public class MainActivity extends AppCompatActivity {
         } else {
             p = 0;
         }
-        TextView txvShow = findViewById(R.id.txvShow); // 正確初始化 txvShow 變數
+        TextView txvShow = findViewById(R.id.txvShow);
 
-        if (a == 1 && p == 1) { // 使用 && 來表示邏輯上的 "和"
-            txvShow.setText("成功登入"); // 在 setText 方法中指定要顯示的文字內容
+        if (a == 1 && p == 1) {
+            txvShow.setText("成功登入");
         } else if (a == 1 && p == 0){
             txvShow.setText("登入失敗，密碼錯誤");
 
