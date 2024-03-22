@@ -1,4 +1,4 @@
-package com.example.ui_test;
+package com.example.ui_test2;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -6,6 +6,8 @@ import android.content.Intent;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.EditText;
+
+import com.example.ui_test2.DisplayStringActivity;
 
 public class MainActivity extends AppCompatActivity {
 
