@@ -12,9 +12,9 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity
-        implements DialogInterface.OnClickListener {
+        implements DialogInterface.OnClickListener, DialogInterface.OnMultiChoiceClickListener {
 
-    private  String[] item = {"Samsung" ,"OPPO","APPLE", "ASUS"};
+    private  String[] items = {"Samsung" ,"OPPO","APPLE", "ASUS"};
     private boolean[] itemsChecked = {false, false, false, false};
 
     @Override
@@ -107,7 +107,7 @@ public class MainActivity extends AppCompatActivity
                         .setTitle("請勾選選項")
                         .setPositiveButton("確定", MainActivity.this)
                         .setNegativeButton("取消", MainActivity.this)
-                        .setMultiChoiceItems(item, itemsChecked, null)
+                        .setMultiChoiceItems(items, itemsChecked, MainActivity.this)
                         .show();
 
 
@@ -148,9 +148,9 @@ public class MainActivity extends AppCompatActivity
         String msg = "";
         switch (which){
             case DialogInterface.BUTTON_POSITIVE:
-                for(int index = 0; index<item.length; index++){
+                for(int index = 0; index<items.length; index++){
                     if (itemsChecked[index])
-                        msg+=item[index]+"\n";
+                        msg+=items[index]+"\n";
                 }
 
                 TextView txvShow = (TextView) findViewById(R.id.txvShow);
@@ -160,6 +160,14 @@ public class MainActivity extends AppCompatActivity
                 Toast.makeText(this, "按下取消鍵",
                         Toast.LENGTH_SHORT).show();
         }
+
+    }
+
+    @Override
+    public void onClick(DialogInterface dialog, int which, boolean isChecked) {
+        Toast.makeText(MainActivity.this,
+                items[which] + (isChecked ?"勾選":"沒有勾選"),
+        Toast.LENGTH_SHORT).show();
 
     }
 }
